@@ -1,0 +1,6 @@
+C:\Users\belin\source\repos\ClassLibraryLab4\ClassLibraryLab4\bin\Debug\ClassLibraryLab4.dll
+C:\Users\belin\source\repos\ClassLibraryLab4\ClassLibraryLab4\bin\Debug\ClassLibraryLab4.pdb
+C:\Users\belin\source\repos\ClassLibraryLab4\ClassLibraryLab4\obj\Debug\ClassLibraryLab4.csproj.AssemblyReference.cache
+C:\Users\belin\source\repos\ClassLibraryLab4\ClassLibraryLab4\obj\Debug\ClassLibraryLab4.csproj.CoreCompileInputs.cache
+C:\Users\belin\source\repos\ClassLibraryLab4\ClassLibraryLab4\obj\Debug\ClassLibraryLab4.dll
+C:\Users\belin\source\repos\ClassLibraryLab4\ClassLibraryLab4\obj\Debug\ClassLibraryLab4.pdb

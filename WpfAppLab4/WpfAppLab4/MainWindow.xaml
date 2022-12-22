@@ -1,0 +1,45 @@
+﻿<Window x:Class="WpfAppLab4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:WpfAppLab4"  d:DataContext="{d:DesignInstance Type=local:ApplyViewModel}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800">
+    <Grid>
+        <Grid Visibility="{Binding GameMenuVisibility}" IsEnabled="{Binding GameMenuEnabled}">
+            <ListBox ItemsSource="{Binding Words}" SelectedItem="{Binding SelectedWordInList}" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,20,506,0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontSize="16" FontWeight="DemiBold" Background="{x:Null}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ToggleButton Content="Добавить" Margin="0,77,314.6,0" Width="186" IsChecked="{Binding AddWords}" HorizontalAlignment="Right" VerticalAlignment="Top" Height="28"/>
+            <ToggleButton Content="Удалить" Margin="0,77,112.6,0" Width="186" IsChecked="{Binding DeleteWords}" HorizontalAlignment="Right" VerticalAlignment="Top" Height="28"/>
+            <ToggleButton Content="Открыть" Margin="0,20,314.6,0" Width="186" IsChecked="{Binding OpenFile}" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34"/>
+            <ToggleButton Content="Сохранить" Margin="0,20,112.6,0" Width="186" IsChecked="{Binding SaveFile}" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34"/>
+            <ToggleButton Content="Начать Игру Переведи" Margin="0,310,315.6,0" Width="186" IsChecked="{Binding StartGameGuess}" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34"/>
+            <ToggleButton Content="Начать Игру ПравдаИлиЛожь" Margin="0,310,109.6,0" Width="186" IsChecked="{Binding StartGameTrueOrFalse}" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34"/>
+            <Label Content="Русское слово" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,127,365.6,0"/>
+            <Label Content="Английское слово" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,127,142.6,0"/>
+            <TextBox Height="25" Margin="0,168,319.6,0" TextWrapping="Wrap" Width="182" Text="{Binding RussianWordAdd}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <TextBox Height="25" Margin="0,168,113.6,0" TextWrapping="Wrap" Width="182" Text="{Binding EnglishWordAdd}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid Visibility="{Binding GameTrueOrFalseVisibility}" IsEnabled="{Binding GameTrueOrFalseEnabled}">
+            <ToggleButton Content="Правда" Margin="126,233,0,122" IsChecked="{Binding ChooseYes}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="65" Width="206"/>
+            <ToggleButton Content="Ложь" Margin="0,233,129.6,122" IsChecked="{Binding ChooseNo}" HorizontalAlignment="Right" VerticalAlignment="Center" Height="65" Width="206"/>
+            <Label Content="{Binding CurrentQuestion}" Margin="53,132,50.6,235" HorizontalAlignment="Center" VerticalAlignment="Center" Width="690" FontStretch="Expanded" Height="53"/>
+            <Label Content="{Binding CurrentScore}" Margin="140,25,129.6,349" HorizontalAlignment="Center" VerticalAlignment="Center" Width="524" Height="46" FontStretch="Expanded"/>
+        </Grid>
+        <Grid Visibility="{Binding GameGuessVisibility}" IsEnabled="{Binding GameGuessEnabled}">
+            <TextBox Height="43" Margin="0,218,303.6,0" TextWrapping="Wrap" Width="206" Text="{Binding CurrentAnswerGuess}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <ToggleButton Content="Сделать Ответ" Margin="0,277,303.6,78" IsChecked="{Binding MakeAnswerGuess}" HorizontalAlignment="Right" VerticalAlignment="Center" Height="65" Width="206" RenderTransformOrigin="0.504,0.52"/>
+            <Label Content="{Binding CurrentQuestion}" Margin="53,132,50.6,235" HorizontalAlignment="Center" VerticalAlignment="Center" Width="690" FontStretch="Expanded" Height="53"/>
+            <Label Content="{Binding CurrentScore}" Margin="140,25,129.6,349" HorizontalAlignment="Center" VerticalAlignment="Center" Width="524" Height="46" FontStretch="Expanded"/>
+        </Grid>
+    </Grid>
+</Window>
